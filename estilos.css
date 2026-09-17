@@ -1,19 +1,11 @@
-/* =========================================================
-   CARNICERÍA JHEENY
-   ESTILOS PRINCIPALES
-   DISEÑO CÁLIDO / PROFESIONAL / RESPONSIVE
-========================================================= */
-
 :root {
 
     /* =====================================================
        COLORES PRINCIPALES
     ===================================================== */
-
     --primary: #b51f2e;
     --primary-dark: #8f1623;
     --primary-light: #d93646;
-
     --secondary: #9a6845;
     --secondary-dark: #70452f;
 
@@ -23,7 +15,6 @@
 
     --cream: #eee0d0;
     --cream-dark: #ddc9b5;
-
     --background: #e7d7c6;
     --background-dark: #d9c5b1;
 
@@ -50,7 +41,6 @@
 
     --text: #302722;
     --text-soft: #665850;
-
     --gray: #766b64;
     --gray-light: #988d85;
 

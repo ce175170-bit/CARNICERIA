@@ -14,7 +14,7 @@
 // EJEMPLO:
 // const WHATSAPP_NUMBER = "59170000000";
 
-const WHATSAPP_NUMBER = "59171424303";
+const WHATSAPP_NUMBER = "59169621569";
 
 
 // Enlace del grupo de WhatsApp

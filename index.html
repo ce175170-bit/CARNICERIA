@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Carnicería | Calidad y Sabor</title>
-
     <meta name="description" content="Carnicería de confianza. Productos frescos, calidad, higiene y precios justos.">
 
     <!-- Favicon -->
@@ -24,18 +22,14 @@
 </head>
 
 <body>
-
     <!-- =====================================================
-         ENCABEZADO
+                ENCABEZADO
     ====================================================== -->
-
     <header class="header" id="inicio">
-
         <div class="header-container">
 
             <!-- LOGO -->
             <a href="#inicio" class="logo">
-
                 <div class="logo-image">
                     <img src="imagenes/logotipo.jpeg" alt="Logo de la carnicería">
                 </div>
@@ -44,17 +38,13 @@
                     <strong>CARNICERÍA</strong>
                     <span>Calidad y Sabor</span>
                 </div>
-
             </a>
 
-
             <!-- =================================================
-                 ACCIONES DEL ENCABEZADO
-                 
+                 ACCIONES DEL ENCABEZADO                 
                  En celular:
                  CARRITO + MENÚ
             ================================================== -->
-
             <div class="header-actions">
 
                 <!-- CARRITO -->
@@ -62,1661 +52,730 @@
                     class="header-cart"
                     id="openCart"
                     aria-label="Abrir carrito"
-                    type="button"
-                >
-
+                    type="button">
                     <i class="fa-solid fa-cart-shopping"></i>
-
                     <span class="cart-button-text">
                         Carrito
                     </span>
-
-                    <b id="cartCount">
-                        0
-                    </b>
-
+                    <b id="cartCount">0</b>
                 </button>
-
 
                 <!-- BOTÓN MENÚ CELULAR -->
                 <button
                     class="menu-toggle"
                     id="menuToggle"
                     aria-label="Abrir menú"
-                    type="button"
-                >
-
+                    type="button">
                     <i class="fa-solid fa-bars"></i>
-
                 </button>
-
             </div>
 
-
             <!-- =================================================
-                 NAVEGACIÓN
-                 
+                 NAVEGACIÓN                 
                  IMPORTANTE:
                  El carrito YA NO está dentro de este menú.
             ================================================== -->
 
             <nav class="navigation" id="navigation">
-
                 <a href="#inicio">
-
                     <i class="fa-solid fa-house"></i>
-
                     Inicio
-
                 </a>
-
-
                 <a href="#productos">
-
                     <i class="fa-solid fa-drumstick-bite"></i>
-
                     Productos
-
                 </a>
-
-
                 <a href="#nosotros">
-
                     <i class="fa-solid fa-store"></i>
-
                     Nosotros
-
                 </a>
-
-
                 <a href="#calidad">
-
                     <i class="fa-solid fa-award"></i>
-
                     Calidad
-
                 </a>
-
-
                 <a href="#contacto">
-
                     <i class="fa-solid fa-location-dot"></i>
-
                     Contacto
-
                 </a>
-
             </nav>
-
         </div>
-
     </header>
 
+    <!-- =====================================================
+                PORTADA / HERO
+    ====================================================== -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+
+            <!-- TEXTO -->
+            <div class="hero-content-text">
+                <span class="hero-subtitle">
+                    CALIDAD • FRESCURA • CONFIANZA
+                </span>
+                <h1>
+                    Bienvenidos a nuestra
+                    <strong>Carnicería</strong>
+                </h1>
+                <p>
+                    Disfruta productos seleccionados, frescos y de calidad,
+                    preparados pensando en el sabor y en la satisfacción de
+                    nuestros clientes.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn-primary">
+                        <i class="fa-solid fa-basket-shopping"></i>
+                        Ver productos
+                    </a>
+                    <button
+                        class="btn-cart-hero"
+                        id="openCartHero"
+                        type="button">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Ver carrito
+                    </button>
+                </div>
+            </div>
+
+            <!-- IMAGEN / LOGOTIPO -->
+            <div class="hero-image">
+                <div class="hero-logo">
+                    <img
+                        src="imagenes/logotipo.jpeg"
+                        alt="Logo de la carnicería">
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- =====================================================
-     PORTADA / HERO
-====================================================== -->
+                HORARIOS Y DÍAS DE ATENCIÓN
+    ====================================================== -->
+    <section class="schedule-section">
+        <div class="section-container">
+            <div class="schedule-grid">
 
-<section class="hero">
+                <!-- HORARIO -->
+                <article class="schedule-card">
+                    <div class="schedule-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+                    <div class="schedule-content">
+                        <span>HORARIO DE ATENCIÓN</span>
+                        <h3>
+                            08:00 AM – 20:00 PM
+                        </h3>
+                        <p>Atención continua durante nuestro horario.</p>
+                    </div>
+                </article>
 
-    <div class="hero-overlay"></div>
+                <!-- DÍAS -->
+                <article class="schedule-card">
+                    <div class="schedule-icon">
+                        <i class="fa-regular fa-calendar-days"></i>
+                    </div>
+                    <div class="schedule-content">
+                        <span>DÍAS DE ATENCIÓN</span>
+                        <h3>
+                            Lunes a Sábado
+                        </h3>
+                        <p>Domingo: Cerrado</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-    <div class="hero-content">
+    <!-- =====================================================
+                 PRODUCTOS
+    ====================================================== -->
+    <section class="products-section" id="productos">
+        <div class="section-container">
 
-        <!-- TEXTO -->
-        <div class="hero-content-text">
-
-            <span class="hero-subtitle">
-                CALIDAD • FRESCURA • CONFIANZA
+        <!-- ENCABEZADO -->
+        <div class="section-heading">
+            <span class="section-label">
+                NUESTRO CATÁLOGO
             </span>
-
-            <h1>
-                Bienvenidos a nuestra
-                <strong>Carnicería</strong>
-            </h1>
-
+            <h2>Productos frescos y de calidad</h2>
             <p>
-                Disfruta productos seleccionados, frescos y de calidad,
-                preparados pensando en el sabor y en la satisfacción de
-                nuestros clientes.
+                Encuentra nuestros productos y agrega tus favoritos
+                al carrito.
             </p>
+        </div>
 
-            <div class="hero-buttons">
+        <!-- FILTROS -->
+        <div class="product-filters">
 
-                <a href="#productos" class="btn-primary">
-
-                    <i class="fa-solid fa-basket-shopping"></i>
-
-                    Ver productos
-
-                </a>
-
-                <button
-                    class="btn-cart-hero"
-                    id="openCartHero"
-                    type="button"
-                >
-
-                    <i class="fa-solid fa-cart-shopping"></i>
-
-                    Ver carrito
-
-                </button>
-
+            <!-- BUSCADOR -->
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="search"
+                    id="productSearch"
+                    placeholder="Buscar producto..."
+                    autocomplete="off">
             </div>
 
+            <!-- CATEGORÍAS -->
+            <div class="category-box">
+                <i class="fa-solid fa-layer-group"></i>
+                <select id="categoryFilter">
+                    <option value="todos">
+                        Todas las categorías
+                    </option>
+
+                    <option value="res">
+                        Carnes de res
+                    </option>
+
+                    <option value="cerdo">
+                        Carne de cerdo
+                    </option>
+
+                    <option value="pollo">
+                        Pollo
+                    </option>
+
+                    <option value="embutidos">
+                        Embutidos
+                    </option>
+
+                    <option value="preparados">
+                        Productos preparados
+                    </option>
+
+                    <option value="ofertas">
+                        Ofertas
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <!-- RESULTADOS -->
+        <div class="products-result">
+            <span id="productResultText">
+                Mostrando todos los productos
+            </span>
         </div>
 
 
-        <!-- IMAGEN / LOGOTIPO -->
-        <div class="hero-image">
-
-            <div class="hero-logo">
-
-                <img
-                    src="imagenes/logotipo.jpeg"
-                    alt="Logo de la carnicería"
-                >
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-        <!-- =====================================================
-             HORARIOS Y DÍAS DE ATENCIÓN
-        ====================================================== -->
-
-        <section class="schedule-section">
-
-            <div class="section-container">
-
-                <div class="schedule-grid">
-
-                    <!-- HORARIO -->
-                    <article class="schedule-card">
-
-                        <div class="schedule-icon">
-
-                            <i class="fa-regular fa-clock"></i>
-
-                        </div>
-
-                        <div class="schedule-content">
-
-                            <span>
-                                HORARIO DE ATENCIÓN
-                            </span>
-
-                            <h3>
-                                08:00 AM – 20:00 PM
-                            </h3>
-
-                            <p>
-                                Atención continua durante nuestro horario.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- DÍAS -->
-                    <article class="schedule-card">
-
-                        <div class="schedule-icon">
-
-                            <i class="fa-regular fa-calendar-days"></i>
-
-                        </div>
-
-                        <div class="schedule-content">
-
-                            <span>
-                                DÍAS DE ATENCIÓN
-                            </span>
-
-                            <h3>
-                                Lunes a Sábado
-                            </h3>
-
-                            <p>
-                                Domingo: Cerrado
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             PRODUCTOS
-        ====================================================== -->
-
-        <section class="products-section" id="productos">
-
-            <div class="section-container">
-
-                <!-- ENCABEZADO -->
-                <div class="section-heading">
-
-                    <span class="section-label">
-                        NUESTRO CATÁLOGO
-                    </span>
-
-                    <h2>
-                        Productos frescos y de calidad
-                    </h2>
-
-                    <p>
-                        Encuentra nuestros productos y agrega tus favoritos
-                        al carrito.
-                    </p>
-
-                </div>
-
-
-                <!-- FILTROS -->
-                <div class="product-filters">
-
-                    <!-- BUSCADOR -->
-                    <div class="search-box">
-
-                        <i class="fa-solid fa-magnifying-glass"></i>
-
-                        <input
-                            type="search"
-                            id="productSearch"
-                            placeholder="Buscar producto..."
-                            autocomplete="off"
-                        >
-
-                    </div>
-
-
-                    <!-- CATEGORÍAS -->
-                    <div class="category-box">
-
-                        <i class="fa-solid fa-layer-group"></i>
-
-                        <select id="categoryFilter">
-
-                            <option value="todos">
-                                Todas las categorías
-                            </option>
-
-                            <option value="res">
-                                Carnes de res
-                            </option>
-
-                            <option value="cerdo">
-                                Carne de cerdo
-                            </option>
-
-                            <option value="pollo">
-                                Pollo
-                            </option>
-
-                            <option value="embutidos">
-                                Embutidos
-                            </option>
-
-                            <option value="preparados">
-                                Productos preparados
-                            </option>
-
-                            <option value="ofertas">
-                                Ofertas
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RESULTADOS -->
-                <div class="products-result">
-
-                    <span id="productResultText">
-                        Mostrando todos los productos
-                    </span>
-
-                </div>
-
-
-                <!-- =================================================
-                     TARJETAS DE PRODUCTOS
-                ================================================== -->
-
-                <div class="products-grid" id="productsGrid">
-
-
-                    <!-- PRODUCTO 1 -->
-                    <article
-                        class="product-card"
-                        data-category="res"
-                        data-name="carne molida"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="imagenes/carne molida.webp"
-                                alt="Carne molida de res"
-                            >
-
-                            <span class="product-category">
-                                Carne de res
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Carne Molida
-                            </h3>
-
-                            <p>
-                                Carne de res seleccionada, ideal para
-                                hamburguesas, rellenos y diferentes comidas.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 64
-                                    </strong>
-
-                                    <span>
-                                        / kg
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Carne Molida"
-                                    data-price="64"
-                                    data-unit="kg"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 2 -->
-                    <article
-                        class="product-card"
-                        data-category="res"
-                        data-name="bistec de res"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/bistec.jpg"
-                                alt="Bistec de res"
-                            >
-
-                            <span class="product-category">
-                                Carne de res
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Bistec de Res
-                            </h3>
-
-                            <p>
-                                Cortes seleccionados de res, frescos y
-                                preparados para una deliciosa comida.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 52
-                                    </strong>
-
-                                    <span>
-                                        / kg
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Bistec de Res"
-                                    data-price="52"
-                                    data-unit="kg"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 3 -->
-                    <article
-                        class="product-card"
-                        data-category="res"
-                        data-name="costilla de res"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/costilla-res.jpg"
-                                alt="Costilla de res"
-                            >
-
-                            <span class="product-category">
-                                Carne de res
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Costilla de Res
-                            </h3>
-
-                            <p>
-                                Costilla fresca, ideal para parrilladas,
-                                sopas y diferentes preparaciones.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 48
-                                    </strong>
-
-                                    <span>
-                                        / kg
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Costilla de Res"
-                                    data-price="48"
-                                    data-unit="kg"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 4 -->
-                    <article
-                        class="product-card"
-                        data-category="cerdo"
-                        data-name="chuleta de cerdo"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/chuleta-cerdo.jpg"
-                                alt="Chuleta de cerdo"
-                            >
-
-                            <span class="product-category">
-                                Carne de cerdo
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Chuleta de Cerdo
-                            </h3>
-
-                            <p>
-                                Chuletas frescas de cerdo, ideales para
-                                preparar a la plancha o a la parrilla.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 38
-                                    </strong>
-
-                                    <span>
-                                        / kg
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Chuleta de Cerdo"
-                                    data-price="38"
-                                    data-unit="kg"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 5 -->
-                    <article
-                        class="product-card"
-                        data-category="cerdo"
-                        data-name="costilla de cerdo"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/costilla-cerdo.jpg"
-                                alt="Costilla de cerdo"
-                            >
-
-                            <span class="product-category">
-                                Carne de cerdo
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Costilla de Cerdo
-                            </h3>
-
-                            <p>
-                                Corte fresco de cerdo, perfecto para
-                                parrilladas y comidas familiares.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 40
-                                    </strong>
-
-                                    <span>
-                                        / kg
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Costilla de Cerdo"
-                                    data-price="40"
-                                    data-unit="kg"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 6 -->
-                    <article
-                        class="product-card"
-                        data-category="pollo"
-                        data-name="pollo entero"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/pollo-entero.jpg"
-                                alt="Pollo entero"
-                            >
-
-                            <span class="product-category">
-                                Pollo
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Pollo Entero
-                            </h3>
-
-                            <p>
-                                Pollo fresco y seleccionado para tus
-                                preparaciones favoritas.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 32
-                                    </strong>
-
-                                    <span>
-                                        / unidad
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Pollo Entero"
-                                    data-price="32"
-                                    data-unit="unidad"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 7 -->
-                    <article
-                        class="product-card"
-                        data-category="pollo"
-                        data-name="pechuga de pollo"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/pechuga.jpg"
-                                alt="Pechuga de pollo"
-                            >
-
-                            <span class="product-category">
-                                Pollo
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Pechuga de Pollo
-                            </h3>
-
-                            <p>
-                                Pechuga fresca, práctica y versátil para
-                                diferentes recetas.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 36
-                                    </strong>
-
-                                    <span>
-                                        / kg
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Pechuga de Pollo"
-                                    data-price="36"
-                                    data-unit="kg"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 8 -->
-                    <article
-                        class="product-card"
-                        data-category="embutidos"
-                        data-name="chorizo"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/chorizo.jpg"
-                                alt="Chorizos"
-                            >
-
-                            <span class="product-category">
-                                Embutidos
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Chorizo
-                            </h3>
-
-                            <p>
-                                Chorizos seleccionados, ideales para
-                                parrilladas y reuniones.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 42
-                                    </strong>
-
-                                    <span>
-                                        / kg
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Chorizo"
-                                    data-price="42"
-                                    data-unit="kg"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 9 -->
-                    <article
-                        class="product-card"
-                        data-category="preparados"
-                        data-name="hamburguesa preparada"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/hamburguesa.jpg"
-                                alt="Hamburguesa preparada"
-                            >
-
-                            <span class="product-category">
-                                Preparados
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Hamburguesa Preparada
-                            </h3>
-
-                            <p>
-                                Hamburguesas preparadas con carne seleccionada
-                                y listas para cocinar.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 50
-                                    </strong>
-
-                                    <span>
-                                        / kg
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Hamburguesa Preparada"
-                                    data-price="50"
-                                    data-unit="kg"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUCTO 10 -->
-                    <article
-                        class="product-card"
-                        data-category="ofertas"
-                        data-name="combo parrillero"
-                    >
-
-                        <div class="product-image">
-
-                            <img
-                                src="img/productos/combo-parrillero.jpg"
-                                alt="Combo parrillero"
-                            >
-
-                            <span class="product-category product-offer">
-                                Oferta
-                            </span>
-
-                        </div>
-
-                        <div class="product-info">
-
-                            <h3>
-                                Combo Parrillero
-                            </h3>
-
-                            <p>
-                                Una selección especial para disfrutar de una
-                                excelente parrillada.
-                            </p>
-
-                            <div class="product-bottom">
-
-                                <div class="product-price">
-
-                                    <strong>
-                                        Bs. 120
-                                    </strong>
-
-                                    <span>
-                                        / combo
-                                    </span>
-
-                                </div>
-
-                                <button
-                                    class="add-cart"
-                                    data-product="Combo Parrillero"
-                                    data-price="120"
-                                    data-unit="combo"
-                                    type="button"
-                                >
-
-                                    <i class="fa-solid fa-cart-plus"></i>
-
-                                    Agregar al carrito
-
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-
-                <!-- SIN RESULTADOS -->
-                <div class="no-products" id="noProducts">
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                    <h3>
-                        No encontramos productos
-                    </h3>
-
-                    <p>
-                        Prueba con otro nombre o categoría.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================================================
-             NOSOTROS
-        ====================================================== -->
-
-        <section class="about-section" id="nosotros">
-
-            <div class="section-container">
-
-                <div class="about-grid">
-
-                    <div class="about-image">
-
+            <!-- =================================================
+                    TARJETAS DE PRODUCTOS
+            ================================================== -->
+            <div class="products-grid" id="productsGrid">
+
+                <!-- PRODUCTO 1 -->
+                <article
+                    class="product-card"
+                    data-category="res"
+                    data-name="carne molida">
+                    <div class="product-image">
                         <img
-                            src="img/carniceria.jpg"
-                            alt="Interior de la carnicería"
-                        >
-
-                    </div>
-
-                    <div class="about-content">
-
-                        <span class="section-label">
-                            SOBRE NOSOTROS
+                            src="imagenes/carne molida.webp"
+                            alt="Carne molida de res">
+                        <span class="product-category">
+                            Carne de res
                         </span>
-
-                        <h2>
-                            Calidad que puedes llevar a tu mesa
-                        </h2>
-
-                        <p>
-                            Trabajamos para ofrecer productos frescos y
-                            seleccionados, brindando una atención cercana
-                            y responsable a cada uno de nuestros clientes.
-                        </p>
-
-                        <p>
-                            Nuestra prioridad es mantener una excelente
-                            calidad, limpieza y conservación en cada producto
-                            que ofrecemos.
-                        </p>
-
-                        <a href="#contacto" class="btn-primary">
-
-                            <i class="fa-solid fa-location-dot"></i>
-
-                            Visítanos
-
-                        </a>
-
                     </div>
+                    <div class="product-info">
+                        <h3>Carne Molida</h3>
+                        <p>
+                            Carne de res seleccionada, ideal para
+                            hamburguesas, rellenos y diferentes comidas.
+                        </p>
+                        <div class="product-bottom">
+                            <div class="product-price">
+                                <strong>
+                                    Bs. 64
+                                </strong>
+                                <span>
+                                    / kg
+                                </span>
+                            </div>
+                            <button
+                                class="add-cart"
+                                data-product="Carne Molida"
+                                data-price="64"
+                                data-unit="kg"
+                                type="button">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+                </article>
 
-                </div>
+                <!-- PRODUCTO 2 -->
+                <article
+                    class="product-card"
+                    data-category="res"
+                    data-name="bistec de res">
+                    <div class="product-image">
+                        <img
+                            src="img/productos/bistec.jpg"
+                            alt="Bistec de res">
+                        <span class="product-category">
+                            Carne de res
+                        </span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bistec de Res</h3>
+                        <p>
+                            Cortes seleccionados de res, frescos y
+                            preparados para una deliciosa comida.
+                        </p>
+                        <div class="product-bottom">
+                            <div class="product-price">
+                                <strong>
+                                    Bs. 52
+                                </strong>
+                                <span>
+                                    / kg
+                                </span>
+                            </div>
+                            <button
+                                class="add-cart"
+                                data-product="Bistec de Res"
+                                data-price="52"
+                                data-unit="kg"
+                                type="button">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+                </article>
 
+
+                <!-- PRODUCTO 3 -->
+                <article
+                    class="product-card"
+                    data-category="res"
+                    data-name="costilla de res">
+                    <div class="product-image">
+                        <img
+                            src="img/productos/costilla-res.jpg"
+                            alt="Costilla de res">
+                        <span class="product-category">
+                            Carne de res
+                        </span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Costilla de Res</h3>
+                        <p>
+                            Costilla fresca, ideal para parrilladas,
+                            sopas y diferentes preparaciones.
+                        </p>
+                        <div class="product-bottom">
+                            <div class="product-price">
+                                <strong>
+                                    Bs. 48
+                                </strong>
+                                <span>
+                                    / kg
+                                </span>
+                            </div>
+                            <button
+                                class="add-cart"
+                                data-product="Costilla de Res"
+                                data-price="48"
+                                data-unit="kg"
+                                type="button">
+                                <i class="fa-solid fa-cart-plus"></i>
+                                Agregar al carrito
+                            </button>
+                        </div>
+                    </div>
+                </article> 
             </div>
 
-        </section>
+            <!-- SIN RESULTADOS -->
+            <div class="no-products" id="noProducts">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>No encontramos productos</h3>
+                <p>Prueba con otro nombre o categoría.</p>
+            </div>
+        </div>
+    </section>
 
-
-        <!-- =====================================================
-             CALIDAD / CARACTERÍSTICAS
-        ====================================================== -->
-
-        <section class="quality-section" id="calidad">
-
-            <div class="section-container">
-
-                <div class="section-heading">
-
+    <!-- =====================================================
+                NOSOTROS
+    ====================================================== -->
+    <section class="about-section" id="nosotros">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img
+                        src="imagenes/carne calidad.webp"
+                        alt="Interior de la carnicería">
+                </div>
+                <div class="about-content">
                     <span class="section-label">
-                        NUESTRO COMPROMISO
+                        SOBRE NOSOTROS
                     </span>
-
-                    <h2>
-                        ¿Por qué elegirnos?
-                    </h2>
-
+                    <h2>Calidad que puedes llevar a tu mesa</h2>
                     <p>
-                        Trabajamos cada día para ofrecerte una experiencia
-                        de compra confiable.
+                        Trabajamos para ofrecer productos frescos y
+                        seleccionados, brindando una atención cercana
+                        y responsable a cada uno de nuestros clientes.
                     </p>
-
+                    <p>
+                        Nuestra prioridad es mantener una excelente
+                        calidad, limpieza y conservación en cada producto
+                        que ofrecemos.
+                    </p>
+                    <a href="#contacto" class="btn-primary">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Visítanos
+                    </a>
                 </div>
-
-
-                <div class="quality-grid">
-
-
-                    <!-- LIMPIEZA -->
-                    <article class="quality-card">
-
-                        <div class="quality-icon">
-                            <i class="fa-solid fa-hand-sparkles"></i>
-                        </div>
-
-                        <h3>
-                            Manejo limpio
-                        </h3>
-
-                        <p>
-                            Cuidamos la limpieza y el manejo adecuado de
-                            nuestros productos.
-                        </p>
-
-                    </article>
-
-
-                    <!-- CALIDAD -->
-                    <article class="quality-card">
-
-                        <div class="quality-icon">
-                            <i class="fa-solid fa-award"></i>
-                        </div>
-
-                        <h3>
-                            Productos de calidad
-                        </h3>
-
-                        <p>
-                            Seleccionamos nuestros productos buscando siempre
-                            ofrecer una excelente calidad.
-                        </p>
-
-                    </article>
-
-
-                    <!-- PRECIO -->
-                    <article class="quality-card">
-
-                        <div class="quality-icon">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-
-                        <h3>
-                            Precio justo
-                        </h3>
-
-                        <p>
-                            Buscamos ofrecer precios adecuados y competitivos
-                            para nuestros clientes.
-                        </p>
-
-                    </article>
-
-
-                    <!-- FRESCURA -->
-                    <article class="quality-card">
-
-                        <div class="quality-icon">
-                            <i class="fa-solid fa-temperature-low"></i>
-                        </div>
-
-                        <h3>
-                            Buena conservación
-                        </h3>
-
-                        <p>
-                            Cuidamos la conservación de nuestros productos
-                            para mantener su calidad.
-                        </p>
-
-                    </article>
-
-
-                    <!-- ATENCIÓN -->
-                    <article class="quality-card">
-
-                        <div class="quality-icon">
-                            <i class="fa-solid fa-user-check"></i>
-                        </div>
-
-                        <h3>
-                            Buena atención
-                        </h3>
-
-                        <p>
-                            Queremos que cada cliente reciba una atención
-                            amable y responsable.
-                        </p>
-
-                    </article>
-
-
-                    <!-- CONFIANZA -->
-                    <article class="quality-card">
-
-                        <div class="quality-icon">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-
-                        <h3>
-                            Tu confianza
-                        </h3>
-
-                        <p>
-                            Trabajamos para construir una relación de
-                            confianza con nuestros clientes.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- =====================================================
+                CALIDAD / CARACTERÍSTICAS
+    ====================================================== -->
+    <section class="quality-section" id="calidad">
+        <div class="section-container">
+            <div class="section-heading">
+                <span class="section-label">
+                    NUESTRO COMPROMISO
+                </span>
+                <h2>¿Por qué elegirnos?</h2>
+                <p>
+                    Trabajamos cada día para ofrecerte una experiencia
+                    de compra confiable.
+                </p>
+            </div>
+            <div class="quality-grid">
 
+                <!-- LIMPIEZA -->
+                <article class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fa-solid fa-hand-sparkles"></i>
+                    </div>
+                    <h3>Manejo limpio</h3>
+                    <p>
+                        Cuidamos la limpieza y el manejo adecuado de
+                        nuestros productos.
+                    </p>
+                </article>
+
+                <!-- CALIDAD -->
+                <article class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3>Productos de calidad</h3>
+                    <p>
+                        Seleccionamos nuestros productos buscando siempre
+                        ofrecer una excelente calidad.
+                    </p>
+                </article>
+
+                <!-- PRECIO -->
+                <article class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3>Precio justo</h3>
+                    <p>
+                        Buscamos ofrecer precios adecuados y competitivos
+                        para nuestros clientes.
+                    </p>
+                </article>
+
+                <!-- FRESCURA -->
+                <article class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fa-solid fa-temperature-low"></i>
+                    </div>
+                    <h3>Buena conservación</h3>
+                    <p>
+                        Cuidamos la conservación de nuestros productos
+                        para mantener su calidad.
+                    </p>
+                </article>
+
+                <!-- ATENCIÓN -->
+                <article class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h3>Buena atención</h3>
+                    <p>
+                        Queremos que cada cliente reciba una atención
+                        amable y responsable.
+                    </p>
+                </article>
+
+                <!-- CONFIANZA -->
+                <article class="quality-card">
+                    <div class="quality-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3>Tu confianza</h3>
+                    <p>
+                        Trabajamos para construir una relación de
+                        confianza con nuestros clientes.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
     </main>
 
-
     <!-- =====================================================
-         CARRITO LATERAL
+                CARRITO LATERAL
     ====================================================== -->
-
     <div class="cart-overlay" id="cartOverlay"></div>
-
-
     <aside class="cart-sidebar" id="cartSidebar">
 
         <!-- CABECERA CARRITO -->
         <div class="cart-header">
-
             <div>
-
-                <span>
-                    TU COMPRA
-                </span>
-
-                <h2>
-                    Mi carrito
-                </h2>
-
+                <span>TU COMPRA</span>
+                <h2>Mi carrito</h2>
             </div>
-
             <button
                 class="close-cart"
                 id="closeCart"
                 aria-label="Cerrar carrito"
-                type="button"
-            >
-
+                type="button">
                 <i class="fa-solid fa-xmark"></i>
-
             </button>
-
         </div>
-
 
         <!-- PRODUCTOS CARRITO -->
         <div class="cart-items" id="cartItems">
-
             <div class="empty-cart" id="emptyCart">
-
                 <i class="fa-solid fa-cart-shopping"></i>
-
-                <h3>
-                    Tu carrito está vacío
-                </h3>
-
-                <p>
-                    Agrega productos para comenzar tu compra.
-                </p>
-
+                <h3>Tu carrito está vacío</h3>
+                <p>Agrega productos para comenzar tu compra.</p>
                 <button
                     id="continueShopping"
-                    type="button"
-                >
-
+                    type="button">
                     <i class="fa-solid fa-basket-shopping"></i>
-
                     Ver productos
-
                 </button>
-
             </div>
-
         </div>
-
 
         <!-- TOTAL -->
         <div class="cart-footer">
-
             <div class="cart-total">
-
-                <span>
-                    Total
-                </span>
-
+                <span>Total</span>
                 <strong id="cartTotal">
                     Bs. 0.00
                 </strong>
-
             </div>
-
             <button
                 class="checkout-button"
                 id="checkoutButton"
                 disabled
-                type="button"
-            >
-
+                type="button">
                 <i class="fa-solid fa-bag-shopping"></i>
-
                 Realizar pedido
-
             </button>
-
         </div>
-
     </aside>
 
-
     <!-- =====================================================
-         MODAL DE FORMULARIO DE PEDIDO
+                MODAL DE FORMULARIO DE PEDIDO
     ====================================================== -->
-
     <div class="modal-overlay" id="orderModal">
-
         <div class="order-modal">
-
             <button
                 class="modal-close"
                 id="closeOrderModal"
                 aria-label="Cerrar formulario"
-                type="button"
-            >
-
+                type="button">
                 <i class="fa-solid fa-xmark"></i>
-
             </button>
-
-
             <div class="modal-icon">
-
                 <i class="fa-brands fa-whatsapp"></i>
-
             </div>
-
             <span class="modal-label">
                 FINALIZAR PEDIDO
             </span>
-
-            <h2>
-                Completa tus datos
-            </h2>
-
+            <h2>Completa tus datos</h2>
             <p>
                 Ingresa tus datos para preparar tu pedido y enviarlo por
                 WhatsApp.
             </p>
-
 
             <!-- FORMULARIO -->
             <form id="orderForm">
 
                 <!-- NOMBRE -->
                 <div class="form-group">
-
                     <label for="customerName">
                         Nombre completo
                     </label>
-
                     <div class="input-wrapper">
-
                         <i class="fa-solid fa-user"></i>
-
                         <input
                             type="text"
                             id="customerName"
                             placeholder="Escribe tu nombre"
-                            required
-                        >
-
+                            required>
                     </div>
-
                 </div>
-
 
                 <!-- CELULAR -->
                 <div class="form-group">
-
                     <label for="customerPhone">
                         Número de celular
                     </label>
-
                     <div class="input-wrapper">
-
                         <i class="fa-solid fa-phone"></i>
-
                         <input
                             type="tel"
                             id="customerPhone"
                             placeholder="Ej. 7XXXXXXX"
-                            required
-                        >
-
+                            required>
                     </div>
-
                 </div>
-
 
                 <!-- OBSERVACIONES -->
                 <div class="form-group">
-
                     <label for="customerNote">
-
                         Observaciones
-
-                        <span>
-                            (opcional)
-                        </span>
-
+                        <span>(opcional)</span>
                     </label>
-
                     <div class="input-wrapper textarea-wrapper">
-
                         <i class="fa-solid fa-message"></i>
-
                         <textarea
                             id="customerNote"
                             rows="3"
                             placeholder="Alguna indicación para tu pedido..."
                         ></textarea>
-
                     </div>
-
                 </div>
-
 
                 <!-- RESUMEN -->
                 <div class="order-summary">
-
                     <div class="summary-title">
-
                         <i class="fa-solid fa-receipt"></i>
-
                         Resumen de tu pedido
-
                     </div>
-
                     <div id="orderSummaryItems">
                         <!-- JavaScript agregará los productos -->
                     </div>
-
                     <div class="summary-total">
-
-                        <span>
-                            Total
-                        </span>
-
+                        <span>Total</span>
                         <strong id="orderSummaryTotal">
                             Bs. 0.00
                         </strong>
-
                     </div>
-
                 </div>
-
 
                 <!-- BOTÓN WHATSAPP -->
                 <button
                     type="submit"
-                    class="whatsapp-submit"
-                >
-
+                    class="whatsapp-submit">
                     <i class="fa-brands fa-whatsapp"></i>
-
                     Enviar pedido por WhatsApp
-
                 </button>
-
             </form>
-
         </div>
-
     </div>
 
-
     <!-- =====================================================
-         MODAL DE CONFIRMACIÓN
+                MODAL DE CONFIRMACIÓN
     ====================================================== -->
-
     <div
         class="modal-overlay confirmation-overlay"
-        id="confirmationModal"
-    >
-
+        id="confirmationModal">
         <div class="confirmation-modal">
-
             <div class="confirmation-icon">
-
                 <i class="fa-solid fa-check"></i>
-
             </div>
-
-            <h2>
-                ¡Pedido enviado correctamente!
-            </h2>
-
+            <h2>¡Pedido enviado correctamente!</h2>
             <p>
                 Hemos recibido tu solicitud. En unos momentos confirmaremos
                 tu pedido.
             </p>
-
             <button
                 id="closeConfirmation"
-                type="button"
-            >
+                type="button">
                 Aceptar
             </button>
-
         </div>
-
     </div>
 
-
     <!-- =====================================================
-         FOOTER
+                FOOTER
     ====================================================== -->
-
     <footer class="footer" id="contacto">
-
         <div class="footer-container">
-
 
             <!-- INFORMACIÓN -->
             <div class="footer-column footer-brand">
-
                 <div class="footer-logo">
-
                     <img
-                        src="img/logo.png"
-                        alt="Logo de la carnicería"
-                    >
-
+                        src="imagenes/logotipo.jpeg"
+                        alt="Logo de la carnicería">
                 </div>
-
-                <h3>
-                    CARNICERÍA
-                </h3>
-
+                <h3>CARNICERÍA</h3>
                 <p>
                     Calidad, frescura y confianza para llevar a tu mesa
                     productos seleccionados.
                 </p>
-
             </div>
-
 
             <!-- DIRECCIÓN -->
             <div class="footer-column">
-
-                <h3>
-                    Visítanos
-                </h3>
-
+                <h3>Visítanos</h3>
                 <div class="footer-contact">
-
                     <div class="contact-item">
-
                         <i class="fa-solid fa-location-dot"></i>
-
                         <div>
-
                             <strong>
                                 Dirección
                             </strong>
-
                             <span>
                                 Tu dirección aquí
                             </span>
-
                         </div>
-
                     </div>
 
-
                     <div class="contact-item">
-
                         <i class="fa-solid fa-phone"></i>
-
                         <div>
-
                             <strong>
                                 Celular
                             </strong>
-
                             <span>
                                 +591 7XXXXXXX
                             </span>
-
                         </div>
-
                     </div>
 
-
                     <div class="contact-item">
-
                         <i class="fa-regular fa-clock"></i>
-
                         <div>
-
                             <strong>
                                 Horario
                             </strong>
-
                             <span>
                                 Lunes a Sábado<br>
                                 08:00 – 20:00
                             </span>
-
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
 
             <!-- WHATSAPP -->
             <div class="footer-column">
-
-                <h3>
-                    WhatsApp
-                </h3>
-
+                <h3>WhatsApp</h3>
                 <p>
                     Reserva tus productos o comunícate directamente con
                     nosotros.
                 </p>
-
 
                 <!-- RESERVAR POR WHATSAPP -->
                 <a
@@ -1724,29 +783,16 @@
                     class="whatsapp-button"
                     id="footerWhatsapp"
                     target="_blank"
-                    rel="noopener"
-                >
-
+                    rel="noopener">
                     <i class="fa-brands fa-whatsapp"></i>
-
                     Reservar por WhatsApp
-
-                </a>
-
-
-                
+                </a>                
             </div>
-
 
             <!-- MAPA -->
             <div class="footer-column footer-map-column">
-
-                <h3>
-                    Encuéntranos
-                </h3>
-
+                <h3>Encuéntranos</h3>
               <div class="map-container">
-
                     <iframe
                         src="https://www.google.com/maps?q=-19.554266,-65.453719&z=18&t=k&output=embed"
                         title="Ubicación de Carnicería Jheeny"
@@ -1754,52 +800,30 @@
                         allowfullscreen
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-
                 </div>
-
                 <a
                     href="https://www.google.com/maps/search/?api=1&query=-19.554266,-65.453719"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="map-button">
-
                     <i class="fa-solid fa-location-dot"></i>
                     Abrir en Google Maps
-
                 </a>
             </div>
-
-
         </div>
-
 
         <!-- PARTE INFERIOR -->
         <div class="footer-bottom">
-
             <div class="footer-bottom-container">
-
-                <p>
-
-                    ©
-
-                    <span id="currentYear"></span>
-
+                <p>©<span id="currentYear"></span>
                     Carnicería. Todos los derechos reservados.
-
                 </p>
-
-
-                
-
             </div>
-
         </div>
-
     </footer>
 
-
     <!-- =====================================================
-         JAVASCRIPT
+                JAVASCRIPT
     ====================================================== -->
 
     <script src="script.js"></script>
