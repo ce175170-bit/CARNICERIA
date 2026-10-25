@@ -12,10 +12,9 @@
 // Bolivia = 591
 //
 // EJEMPLO:
-// const WHATSAPP_NUMBER = "59170000000";
+// const WHATSAPP_NUMBER = "59167933907";
 
-const WHATSAPP_NUMBER = "59169621569";
-
+const WHATSAPP_NUMBER = "59167933907";
 
 // Enlace del grupo de WhatsApp
 const WHATSAPP_GROUP_LINK = "https://chat.whatsapp.com/COLOCA_AQUI_EL_ENLACE";
@@ -36,7 +35,6 @@ let cart = [];
 const menuToggle = document.getElementById("menuToggle");
 const navigation = document.getElementById("navigation");
 
-
 // CARRITO
 const openCart = document.getElementById("openCart");
 const openCartHero = document.getElementById("openCartHero");
@@ -49,16 +47,20 @@ const cartTotal = document.getElementById("cartTotal");
 const checkoutButton = document.getElementById("checkoutButton");
 const continueShopping = document.getElementById("continueShopping");
 
-
 // PRODUCTOS
 const productsGrid = document.getElementById("productsGrid");
-const productCards = document.querySelectorAll(".product-card");
+
+/*
+ * IMPORTANTE: las tarjetas se buscan cada vez que se usan
+ * (no se guardan una sola vez), así funcionan también los
+ * productos agregados con productos.js
+ */
+const getProductCards = () => document.querySelectorAll(".product-card");
 
 const productSearch = document.getElementById("productSearch");
 const categoryFilter = document.getElementById("categoryFilter");
 const productResultText = document.getElementById("productResultText");
 const noProducts = document.getElementById("noProducts");
-
 
 // MODAL PEDIDO
 const orderModal = document.getElementById("orderModal");
@@ -72,11 +74,9 @@ const customerNote = document.getElementById("customerNote");
 const orderSummaryItems = document.getElementById("orderSummaryItems");
 const orderSummaryTotal = document.getElementById("orderSummaryTotal");
 
-
 // MODAL CONFIRMACIÓN
 const confirmationModal = document.getElementById("confirmationModal");
 const closeConfirmation = document.getElementById("closeConfirmation");
-
 
 // FOOTER
 const footerWhatsapp = document.getElementById("footerWhatsapp");
@@ -97,6 +97,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setupCurrentYear();
 
+    // Aplica el filtro actual (por si hay texto o categoría ya elegidos)
+    filterProducts();
+
 });
 
 
@@ -115,13 +118,11 @@ if (menuToggle) {
         if (navigation.classList.contains("active")) {
 
             icon.classList.remove("fa-bars");
-
             icon.classList.add("fa-xmark");
 
         } else {
 
             icon.classList.remove("fa-xmark");
-
             icon.classList.add("fa-bars");
 
         }
@@ -150,7 +151,6 @@ navigationLinks.forEach(link => {
         if (icon) {
 
             icon.classList.remove("fa-xmark");
-
             icon.classList.add("fa-bars");
 
         }
@@ -169,7 +169,6 @@ document.addEventListener("click", (event) => {
     if (!navigation || !menuToggle) return;
 
     const clickDentroMenu = navigation.contains(event.target);
-
     const clickBotonMenu = menuToggle.contains(event.target);
 
     if (
@@ -185,7 +184,6 @@ document.addEventListener("click", (event) => {
         if (icon) {
 
             icon.classList.remove("fa-xmark");
-
             icon.classList.add("fa-bars");
 
         }
@@ -202,7 +200,6 @@ document.addEventListener("click", (event) => {
 function openCartSidebar() {
 
     cartSidebar.classList.add("active");
-
     cartOverlay.classList.add("active");
 
     document.body.style.overflow = "hidden";
@@ -217,7 +214,6 @@ function openCartSidebar() {
 function closeCartSidebar() {
 
     cartSidebar.classList.remove("active");
-
     cartOverlay.classList.remove("active");
 
     document.body.style.overflow = "";
@@ -226,32 +222,20 @@ function closeCartSidebar() {
 
 
 if (openCart) {
-
     openCart.addEventListener("click", openCartSidebar);
-
 }
-
 
 if (openCartHero) {
-
     openCartHero.addEventListener("click", openCartSidebar);
-
 }
-
 
 if (closeCart) {
-
     closeCart.addEventListener("click", closeCartSidebar);
-
 }
-
 
 if (cartOverlay) {
-
     cartOverlay.addEventListener("click", closeCartSidebar);
-
 }
-
 
 if (continueShopping) {
 
@@ -261,9 +245,7 @@ if (continueShopping) {
 
         document
             .getElementById("productos")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
+            .scrollIntoView({ behavior: "smooth" });
 
     });
 
@@ -272,94 +254,84 @@ if (continueShopping) {
 
 /* =========================================================
    AGREGAR PRODUCTOS AL CARRITO
+   (funciona con cualquier botón .add-cart, incluso los
+   que se agregan después con productos.js)
 ========================================================= */
 
-const addCartButtons = document.querySelectorAll(".add-cart");
+document.addEventListener("click", (event) => {
+
+    const button = event.target.closest(".add-cart");
+
+    if (!button) return;
 
 
-addCartButtons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const productName = button.dataset.product;
-
-        const productPrice = parseFloat(button.dataset.price);
-
-        const productUnit = button.dataset.unit;
+    const productName = button.dataset.product;
+    const productPrice = parseFloat(button.dataset.price);
+    const productUnit = button.dataset.unit;
 
 
-        /*
-         * Buscamos la tarjeta del producto
-         * para obtener su imagen.
-         */
+    /*
+     * Buscamos la tarjeta del producto
+     * para obtener su imagen.
+     */
 
-        const productCard = button.closest(".product-card");
+    const productCard = button.closest(".product-card");
 
-        const imageElement = productCard
-            ? productCard.querySelector(".product-image img")
-            : null;
+    const imageElement = productCard
+        ? productCard.querySelector(".product-image .main-img") ||
+          productCard.querySelector(".product-image img")
+        : null;
 
-        const productImage = imageElement
-            ? imageElement.getAttribute("src")
-            : "";
-
-
-        /*
-         * Verificamos si ya existe
-         */
-
-        const existingProduct = cart.find(
-            item => item.name === productName
-        );
+    const productImage = imageElement
+        ? imageElement.getAttribute("src")
+        : "";
 
 
-        if (existingProduct) {
+    /*
+     * Verificamos si ya existe
+     */
 
-            existingProduct.quantity++;
-
-        } else {
-
-            cart.push({
-
-                name: productName,
-
-                price: productPrice,
-
-                unit: productUnit,
-
-                quantity: 1,
-
-                image: productImage
-
-            });
-
-        }
+    const existingProduct = cart.find(
+        item => item.name === productName
+    );
 
 
-        updateCart();
+    if (existingProduct) {
+
+        existingProduct.quantity++;
+
+    } else {
+
+        cart.push({
+            name: productName,
+            price: productPrice,
+            unit: productUnit,
+            quantity: 1,
+            image: productImage
+        });
+
+    }
 
 
-        /*
-         * Animación del botón
-         */
-
-        button.classList.add("cart-pulse");
+    updateCart();
 
 
-        setTimeout(() => {
+    /*
+     * Animación del botón
+     */
 
-            button.classList.remove("cart-pulse");
+    button.classList.add("cart-pulse");
 
-        }, 400);
+    setTimeout(() => {
+        button.classList.remove("cart-pulse");
+    }, 400);
 
 
-        /*
-         * Abrir carrito automáticamente
-         */
+    /*
+     * Abrir carrito automáticamente
+     */
 
-        openCartSidebar();
-
-    });
+    openCartSidebar();
 
 });
 
@@ -421,7 +393,6 @@ function renderCart() {
         const newContinueButton =
             document.getElementById("continueShopping");
 
-
         if (newContinueButton) {
 
             newContinueButton.addEventListener("click", () => {
@@ -430,14 +401,11 @@ function renderCart() {
 
                 document
                     .getElementById("productos")
-                    .scrollIntoView({
-                        behavior: "smooth"
-                    });
+                    .scrollIntoView({ behavior: "smooth" });
 
             });
 
         }
-
 
         return;
 
@@ -453,21 +421,18 @@ function renderCart() {
 
     cart.forEach((item, index) => {
 
-        const itemTotal =
-            item.price * item.quantity;
-
+        const itemTotal = item.price * item.quantity;
 
         const cartItem = document.createElement("div");
 
         cartItem.className = "cart-item";
-
 
         cartItem.innerHTML = `
 
             <div class="cart-item-image">
 
                 <img
-                    src="${item.image}"
+                    src="${escapeHTML(item.image)}"
                     alt="${escapeHTML(item.name)}"
                 >
 
@@ -534,7 +499,6 @@ function renderCart() {
 
         `;
 
-
         cartItems.appendChild(cartItem);
 
     });
@@ -551,22 +515,15 @@ function renderCart() {
 
 function setupCartControls() {
 
-
     /*
      * AUMENTAR
      */
 
-    const increaseButtons =
-        document.querySelectorAll(".increase-item");
-
-
-    increaseButtons.forEach(button => {
+    document.querySelectorAll(".increase-item").forEach(button => {
 
         button.addEventListener("click", () => {
 
-            const index =
-                parseInt(button.dataset.index);
-
+            const index = parseInt(button.dataset.index);
 
             if (cart[index]) {
 
@@ -585,20 +542,13 @@ function setupCartControls() {
      * DISMINUIR
      */
 
-    const decreaseButtons =
-        document.querySelectorAll(".decrease-item");
-
-
-    decreaseButtons.forEach(button => {
+    document.querySelectorAll(".decrease-item").forEach(button => {
 
         button.addEventListener("click", () => {
 
-            const index =
-                parseInt(button.dataset.index);
-
+            const index = parseInt(button.dataset.index);
 
             if (!cart[index]) return;
-
 
             if (cart[index].quantity > 1) {
 
@@ -609,7 +559,6 @@ function setupCartControls() {
                 cart.splice(index, 1);
 
             }
-
 
             updateCart();
 
@@ -622,17 +571,11 @@ function setupCartControls() {
      * ELIMINAR
      */
 
-    const removeButtons =
-        document.querySelectorAll(".remove-item");
-
-
-    removeButtons.forEach(button => {
+    document.querySelectorAll(".remove-item").forEach(button => {
 
         button.addEventListener("click", () => {
 
-            const index =
-                parseInt(button.dataset.index);
-
+            const index = parseInt(button.dataset.index);
 
             if (cart[index]) {
 
@@ -660,7 +603,6 @@ function updateCartCount() {
         0
     );
 
-
     if (cartCount) {
 
         cartCount.textContent = totalQuantity;
@@ -677,8 +619,7 @@ function updateCartCount() {
 function calculateCartTotal() {
 
     return cart.reduce(
-        (total, item) =>
-            total + (item.price * item.quantity),
+        (total, item) => total + (item.price * item.quantity),
         0
     );
 
@@ -689,19 +630,15 @@ function updateCartTotal() {
 
     const total = calculateCartTotal();
 
-
     if (cartTotal) {
 
-        cartTotal.textContent =
-            `Bs. ${formatPrice(total)}`;
+        cartTotal.textContent = `Bs. ${formatPrice(total)}`;
 
     }
 
-
     if (checkoutButton) {
 
-        checkoutButton.disabled =
-            cart.length === 0;
+        checkoutButton.disabled = cart.length === 0;
 
     }
 
@@ -716,28 +653,19 @@ if (checkoutButton) {
 
     checkoutButton.addEventListener("click", () => {
 
-        if (cart.length === 0) {
-
-            return;
-
-        }
-
+        if (cart.length === 0) return;
 
         renderOrderSummary();
 
-
         orderModal.classList.add("active");
 
-
         document.body.style.overflow = "hidden";
-
 
         /*
          * Cerrar carrito
          */
 
         cartSidebar.classList.remove("active");
-
         cartOverlay.classList.remove("active");
 
     });
@@ -796,23 +724,16 @@ function renderOrderSummary() {
 
     if (!orderSummaryItems) return;
 
-
     orderSummaryItems.innerHTML = "";
 
 
     cart.forEach(item => {
 
-        const total =
-            item.price * item.quantity;
+        const total = item.price * item.quantity;
 
+        const summaryItem = document.createElement("div");
 
-        const summaryItem =
-            document.createElement("div");
-
-
-        summaryItem.className =
-            "summary-item";
-
+        summaryItem.className = "summary-item";
 
         summaryItem.innerHTML = `
 
@@ -827,7 +748,6 @@ function renderOrderSummary() {
 
         `;
 
-
         orderSummaryItems.appendChild(summaryItem);
 
     });
@@ -835,11 +755,9 @@ function renderOrderSummary() {
 
     const total = calculateCartTotal();
 
-
     if (orderSummaryTotal) {
 
-        orderSummaryTotal.textContent =
-            `Bs. ${formatPrice(total)}`;
+        orderSummaryTotal.textContent = `Bs. ${formatPrice(total)}`;
 
     }
 
@@ -861,16 +779,9 @@ if (orderForm) {
          * Obtener datos
          */
 
-        const name =
-            customerName.value.trim();
-
-
-        const phone =
-            customerPhone.value.trim();
-
-
-        const note =
-            customerNote.value.trim();
+        const name = customerName.value.trim();
+        const phone = customerPhone.value.trim();
+        const note = customerNote.value.trim();
 
 
         /*
@@ -916,19 +827,11 @@ if (orderForm) {
 
         let message = "";
 
-
         message += "🥩 *NUEVO PEDIDO*%0A";
-
         message += "%0A";
 
-        message += "*Cliente:* "
-            + encodeURIComponent(name)
-            + "%0A";
-
-        message += "*Celular:* "
-            + encodeURIComponent(phone)
-            + "%0A";
-
+        message += "*Cliente:* " + encodeURIComponent(name) + "%0A";
+        message += "*Celular:* " + encodeURIComponent(phone) + "%0A";
         message += "%0A";
 
         message += "*PRODUCTOS:*%0A";
@@ -936,24 +839,15 @@ if (orderForm) {
 
         cart.forEach(item => {
 
-            const itemTotal =
-                item.price * item.quantity;
-
+            const itemTotal = item.price * item.quantity;
 
             message += "%0A";
 
-            message += "• "
-                + encodeURIComponent(item.name);
+            message += "• " + encodeURIComponent(item.name);
 
+            message += " — " + item.quantity + " " + encodeURIComponent(item.unit);
 
-            message += " — "
-                + item.quantity
-                + " "
-                + encodeURIComponent(item.unit);
-
-
-            message += " — Bs. "
-                + formatPrice(itemTotal);
+            message += " — Bs. " + formatPrice(itemTotal);
 
         });
 
@@ -963,10 +857,7 @@ if (orderForm) {
 
         const total = calculateCartTotal();
 
-
-        message += "*TOTAL: Bs. "
-            + formatPrice(total)
-            + "*";
+        message += "*TOTAL: Bs. " + formatPrice(total) + "*";
 
 
         /*
@@ -1124,15 +1015,18 @@ document.addEventListener("keydown", event => {
 
 function filterProducts() {
 
+    // Se buscan las tarjetas cada vez (incluye las nuevas)
+    const productCards = getProductCards();
+
+    if (!productSearch || !categoryFilter) return;
+
+
     const searchText =
         productSearch.value
             .trim()
             .toLowerCase();
 
-
-    const selectedCategory =
-        categoryFilter.value;
-
+    const selectedCategory = categoryFilter.value;
 
     let visibleProducts = 0;
 
@@ -1140,16 +1034,12 @@ function filterProducts() {
     productCards.forEach(card => {
 
         const productName =
-            card.dataset.name.toLowerCase();
+            (card.dataset.name || "").toLowerCase();
 
-
-        const category =
-            card.dataset.category;
-
+        const category = card.dataset.category;
 
         const matchesSearch =
             productName.includes(searchText);
-
 
         const matchesCategory =
             selectedCategory === "todos" ||
@@ -1177,25 +1067,32 @@ function filterProducts() {
 
     if (visibleProducts === 0) {
 
-        noProducts.style.display = "block";
+        if (noProducts) noProducts.style.display = "block";
 
-        productResultText.textContent =
-            "No se encontraron productos.";
+        if (productResultText) {
+
+            productResultText.textContent =
+                "No se encontraron productos.";
+
+        }
 
     } else {
 
-        noProducts.style.display = "none";
+        if (noProducts) noProducts.style.display = "none";
 
+        if (productResultText) {
 
-        if (visibleProducts === productCards.length) {
+            if (visibleProducts === productCards.length) {
 
-            productResultText.textContent =
-                "Mostrando todos los productos.";
+                productResultText.textContent =
+                    "Mostrando todos los productos.";
 
-        } else {
+            } else {
 
-            productResultText.textContent =
-                `Mostrando ${visibleProducts} producto${visibleProducts === 1 ? "" : "s"}.`;
+                productResultText.textContent =
+                    `Mostrando ${visibleProducts} producto${visibleProducts === 1 ? "" : "s"}.`;
+
+            }
 
         }
 
@@ -1210,22 +1107,20 @@ function filterProducts() {
 
 if (productSearch) {
 
-    productSearch.addEventListener(
-        "input",
-        filterProducts
-    );
+    productSearch.addEventListener("input", filterProducts);
 
 }
 
 
 if (categoryFilter) {
 
-    categoryFilter.addEventListener(
-        "change",
-        filterProducts
-    );
+    categoryFilter.addEventListener("change", filterProducts);
 
 }
+
+
+/* Si productos.js agrega tarjetas, se vuelve a aplicar el filtro */
+document.addEventListener("productosRenderizados", filterProducts);
 
 
 /* =========================================================
@@ -1240,7 +1135,6 @@ function setupWhatsAppLinks() {
 
     const reservationMessage =
         "Hola, quiero consultar/reservar algunos productos de la carnicería.";
-
 
     const whatsappURL =
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(reservationMessage)}`;
@@ -1274,8 +1168,7 @@ function setupWhatsAppLinks() {
 
     if (whatsappGroup) {
 
-        whatsappGroup.href =
-            WHATSAPP_GROUP_LINK;
+        whatsappGroup.href = WHATSAPP_GROUP_LINK;
 
     }
 
@@ -1290,8 +1183,7 @@ function setupCurrentYear() {
 
     if (currentYear) {
 
-        currentYear.textContent =
-            new Date().getFullYear();
+        currentYear.textContent = new Date().getFullYear();
 
     }
 
@@ -1316,15 +1208,10 @@ function formatPrice(value) {
 function escapeHTML(text) {
 
     return String(text)
-
         .replace(/&/g, "&amp;")
-
         .replace(/</g, "&lt;")
-
         .replace(/>/g, "&gt;")
-
         .replace(/"/g, "&quot;")
-
         .replace(/'/g, "&#039;");
 
 }
