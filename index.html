@@ -3,544 +3,383 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carnicería el mago | Calidad y Sabor</title>
-    <meta name="description" content="Carnicería de confianza. Productos frescos, calidad, higiene y precios justos.">
-    <!-- Favicon -->
-    <link rel="icon" href="imagenes/logo.png">
-    <!-- Google Fonts -->
+    <title>Carnicería El Mago | Carne de cerdo fresca y de calidad</title>
+    <meta name="description" content="Carnicería El Mago: carne de cerdo fresca, embutidos y productos para tu parrillada. Calidad, higiene y precios justos. Haz tu pedido por WhatsApp.">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#b51f2e">
+    <link rel="canonical" href="https://ce175170-bit.github.io/CARNICERIA/">
+
+    <!-- Iconos (Google muestra el favicon junto al resultado) -->
+    <link rel="icon" href="imagenes/logo.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="imagenes/logo.png">
+
+    <!-- Vista previa al compartir (WhatsApp, Facebook, Google) -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_BO">
+    <meta property="og:site_name" content="Carnicería El Mago">
+    <meta property="og:title" content="Carnicería El Mago | Calidad y Sabor">
+    <meta property="og:description" content="Carne de cerdo fresca, embutidos y productos para tu parrillada. Pide por WhatsApp.">
+    <meta property="og:url" content="https://ce175170-bit.github.io/CARNICERIA/">
+    <meta property="og:image" content="https://ce175170-bit.github.io/CARNICERIA/imagenes/portada-compartir.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Carnicería El Mago">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carnicería El Mago | Calidad y Sabor">
+    <meta name="twitter:description" content="Carne de cerdo fresca, embutidos y productos para tu parrillada.">
+    <meta name="twitter:image" content="https://ce175170-bit.github.io/CARNICERIA/imagenes/portada-compartir.jpg">
+
+    <!-- Datos para Google: negocio local -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Butcher",
+        "name": "Carnicería El Mago",
+        "description": "Carne de cerdo fresca, embutidos y productos para tu parrillada.",
+        "url": "https://ce175170-bit.github.io/CARNICERIA/",
+        "image": "https://ce175170-bit.github.io/CARNICERIA/imagenes/portada-compartir.jpg",
+        "logo": "https://ce175170-bit.github.io/CARNICERIA/imagenes/logo.png",
+        "telephone": "+59167933907",
+        "priceRange": "Bs.",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "6 de agosto",
+            "addressLocality": "TU CIUDAD",
+            "addressCountry": "BO"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -19.554266,
+            "longitude": -65.453719
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "08:00",
+            "closes": "20:00"
+        }
+    }
+    </script>
+
+    <!-- Fuentes (una sola solicitud) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Oswald:wght@500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600&family=Playfair+Display:ital,wght@0,600;1,500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Iconos de la página -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- CSS -->
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
-    <!-- =====================================================
-                ENCABEZADO
-    ====================================================== -->
-    <header class="header" id="inicio">
-        <div class="header-container">
+    <!-- ===================== ENCABEZADO ===================== -->
+    <header 
+        class="encabezado" id="inicio">
+        <div class="encabezado-contenedor">
 
-            <!-- LOGO -->
             <a href="#inicio" class="logo">
-                <div class="logo-image">
-                    <img src="imagenes/logo.webp" alt="Logo de la carnicería">
+                <div class="logo-imagen">
+                    <img src="imagenes/logo.webp" alt="Logo de la carnicería" width="52" height="52">
                 </div>
-
-                <div class="logo-text">
+                <div class="logo-texto">
                     <strong>CARNICERÍA EL MAGO</strong>
                     <span>Calidad y Sabor</span>
                 </div>
             </a>
 
-            <!-- =================================================
-                 ACCIONES DEL ENCABEZADO                 
-                 En celular:
-                 CARRITO + MENÚ
-            ================================================== -->
-            <div class="header-actions">
-
-                <!-- CARRITO -->
-                <button
-                    class="header-cart"
-                    id="openCart"
-                    aria-label="Abrir carrito"
-                    type="button">
+            <div class="encabezado-acciones">
+                <button class="encabezado-carrito" id="abrirCarrito" aria-label="Abrir carrito" type="button">
                     <i class="fa-solid fa-cart-shopping"></i>
-                    <span class="cart-button-text">
-                        Carrito
-                    </span>
-                    <b id="cartCount">0</b>
+                    <span class="carrito-texto">Carrito</span>
+                    <b id="contadorCarrito">0</b>
                 </button>
 
-                <!-- BOTÓN MENÚ CELULAR -->
-                <button
-                    class="menu-toggle"
-                    id="menuToggle"
-                    aria-label="Abrir menú"
-                    type="button">
+                <button class="boton-menu" id="botonMenu" aria-label="Abrir menú" type="button">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
 
-            <!-- =================================================
-                 NAVEGACIÓN                 
-                 IMPORTANTE:
-                 El carrito YA NO está dentro de este menú.
-            ================================================== -->
-
-            <nav class="navigation" id="navigation">
-                <a href="#inicio">
-                    <i class="fa-solid fa-house"></i>
-                    Inicio
-                </a>
-                <a href="#productos">
-                    <i class="fa-solid fa-drumstick-bite"></i>
-                    Productos
-                </a>
-                <a href="#nosotros">
-                    <i class="fa-solid fa-store"></i>
-                    Nosotros
-                </a>
-                <a href="#calidad">
-                    <i class="fa-solid fa-award"></i>
-                    Calidad
-                </a>
-                <a href="#contacto">
-                    <i class="fa-solid fa-location-dot"></i>
-                    Contacto
-                </a>
+            <nav class="navegacion" id="navegacion">
+                <a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="#productos"><i class="fa-solid fa-drumstick-bite"></i> Productos</a>
+                <a href="#nosotros"><i class="fa-solid fa-store"></i> Nosotros</a>
+                <a href="#calidad"><i class="fa-solid fa-award"></i> Calidad</a>
+                <a href="#contacto"><i class="fa-solid fa-location-dot"></i> Contacto</a>
             </nav>
         </div>
     </header>
 
-    <!-- =====================================================
-                1° SECCION PORTADA
-    ====================================================== -->
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
+    <main>
+        <!-- ===================== PORTADA ===================== -->
+        <section 
+            class="portada">
+            <div class="portada-capa"></div>
+            <div class="portada-contenido">
 
-            <!-- TEXTO -->
-            <div class="hero-content-text">
-                <span class="hero-subtitle">
-                    CALIDAD • FRESCURA • CONFIANZA
-                </span>
-                <h1>
-                    Bienvenidos a nuestra
-                    <strong>Carnicería</strong>
-                </h1>
-                <p>
-                    Disfruta productos seleccionados, frescos y de calidad,
-                    preparados pensando en el sabor y en la satisfacción de
-                    nuestros clientes.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#productos" class="btn-primary">
-                        <i class="fa-solid fa-basket-shopping"></i>
-                        Ver productos
-                    </a>
-                    <button
-                        class="btn-cart-hero"
-                        id="openCartHero"
-                        type="button">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        Ver carrito
-                    </button>
+                <div class="portada-texto">
+                    <span class="portada-subtitulo">CALIDAD • FRESCURA • CONFIANZA</span>
+                    <h1>
+                        Bienvenidos a nuestra
+                        <strong>Carnicería</strong>
+                    </h1>
+                    <p>
+                        Disfruta productos seleccionados, frescos y de calidad,
+                        preparados pensando en el sabor y en la satisfacción de
+                        nuestros clientes.
+                    </p>
+                    <div class="portada-botones">
+                        <a href="#productos" class="boton-primario">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                            Ver productos
+                        </a>
+                        <button class="boton-carrito-portada" id="abrirCarritoPortada" type="button">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            Ver carrito
+                        </button>
+                    </div>
+                </div>
+
+                <div class="portada-imagen">
+                    <div class="portada-logo">
+                        <img src="imagenes/logo.png" alt="Logo de la carnicería" fetchpriority="high">
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- IMAGEN / LOGOTIPO -->
-            <div class="hero-image">
-                <div class="hero-logo">
-                    <img
-                        src="imagenes/logo.png"
-                        alt="Logo de la carnicería">
+        <!-- ===================== HORARIOS ===================== -->
+        <section 
+            class="seccion-horarios">
+            <div class="contenedor">
+                <div class="horarios-grilla">
+
+                    <article class="horario-tarjeta">
+                        <div class="horario-icono"><i class="fa-regular fa-clock"></i></div>
+                        <div class="horario-contenido">
+                            <span>HORARIO DE ATENCIÓN</span>
+                            <h3>06:00 AM – 20:00 PM</h3>
+                            <p>Atención continua durante nuestro horario.</p>
+                        </div>
+                    </article>
+
+                    <article class="horario-tarjeta">
+                        <div class="horario-icono"><i class="fa-regular fa-calendar-days"></i></div>
+                        <div class="horario-contenido">
+                            <span>DÍAS DE ATENCIÓN</span>
+                            <h3>Lunes a Domingo</h3>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- =====================================================
-                2° SECCION HORARIOS 
-    ====================================================== -->
-    <section class="schedule-section">
-        <div class="section-container">
-            <div class="schedule-grid">
+        <!-- ===================== PRODUCTOS ===================== -->
+        <section 
+            class="seccion-productos" id="productos">
+            <div class="contenedor">
 
-                <!-- HORARIO -->
-                <article class="schedule-card">
-                    <div class="schedule-icon">
-                        <i class="fa-regular fa-clock"></i>
-                    </div>
-                    <div class="schedule-content">
-                        <span>HORARIO DE ATENCIÓN</span>
-                        <h3>
-                            06:00 AM – 20:00 PM
-                        </h3>
-                        <p>Atención continua durante nuestro horario.</p>
-                    </div>
-                </article>
-
-                <!-- DÍAS -->
-                <article class="schedule-card">
-                    <div class="schedule-icon">
-                        <i class="fa-regular fa-calendar-days"></i>
-                    </div>
-                    <div class="schedule-content">
-                        <span>DÍAS DE ATENCIÓN</span>
-                        <h3>
-                            Lunes a Domingo
-                        </h3>
-                        
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- =====================================================
-                 3° SECCION PRODUCTOS
-    ====================================================== -->
-    <section class="products-section" id="productos">
-        <div class="section-container">
-
-        <!-- ENCABEZADO -->
-        <div class="section-heading">
-            <span class="section-label">
-                NUESTRO CATÁLOGO
-            </span>
-            <h2>Productos frescos y de calidad</h2>
-            <p>
-                Encuentra nuestros productos y agrega tus favoritos
-                al carrito.
-            </p>
-        </div>
-
-        <!-- FILTROS -->
-        <div class="product-filters">
-
-            <!-- BUSCADOR -->
-            <div class="search-box">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input
-                    type="search"
-                    id="productSearch"
-                    placeholder="Buscar producto..."
-                    autocomplete="off">
-            </div>
-
-            <!-- CATEGORÍAS -->
-            <div class="category-box">
-                <i class="fa-solid fa-layer-group"></i>
-                <select id="categoryFilter">
-                    <option value="todos">
-                        Todas las categorías
-                    </option>
-                    
-                    <option value="cerdo">
-                        Carne de cerdo
-                    </option>                    
-
-                    <option value="embutidos">
-                        Embutidos
-                    </option>
-
-                    <option value="varios">
-                        Productos varios
-                    </option>                  
-                    
-                </select>
-            </div>
-        </div>
-
-        <!-- RESULTADOS -->
-        <div class="products-result">
-            <span id="productResultText">
-                Mostrando todos los productos
-            </span>
-        </div>
-
-
-            <!-- =================================================
-                    TARJETAS DE PRODUCTOS
-            ================================================== -->
-            <div class="products-grid" id="productsGrid">
-
-            </div>
-
-            <!-- SIN RESULTADOS -->
-            <div class="no-products" id="noProducts">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <h3>No encontramos productos</h3>
-                <p>Prueba con otro nombre o categoría.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- =====================================================
-                4° SECCION NOSOTROS
-    ====================================================== -->
-    <section class="about-section" id="nosotros">
-        <div class="section-container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img
-                        src="imagenes/carne calidad.webp"
-                        alt="Interior de la carnicería">
+                <div class="seccion-encabezado">
+                    <span class="seccion-etiqueta">NUESTRO CATÁLOGO</span>
+                    <h2>Productos frescos y de calidad</h2>
+                    <p>Encuentra nuestros productos y agrega tus favoritos al carrito.</p>
                 </div>
-                <div class="about-content">
-                    <span class="section-label">
-                        SOBRE NOSOTROS
-                    </span>
-                    <h2>Calidad que puedes llevar a tu mesa</h2>
-                    <p>
-                        Trabajamos para ofrecer productos frescos y
-                        seleccionados, brindando una atención cercana
-                        y responsable a cada uno de nuestros clientes.
-                    </p>
-                    <p>
-                        Nuestra prioridad es mantener una excelente
-                        calidad, limpieza y conservación en cada producto
-                        que ofrecemos.
-                    </p>
-                    <a href="#contacto" class="btn-primary">
-                        <i class="fa-solid fa-location-dot"></i>
-                        Visítanos
-                    </a>
+
+                <div class="filtros-productos">
+                    <div class="caja-busqueda">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="buscadorProductos" placeholder="Buscar producto..." autocomplete="off">
+                    </div>
+
+                    <div class="caja-categoria">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <select id="filtroCategoria">
+                            <option value="todos">Todas las categorías</option>
+                            <option value="cerdo">Carne de cerdo</option>
+                            <option value="embutidos">Embutidos</option>
+                            <option value="varios">Productos varios</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="resultados-productos">
+                    <span id="textoResultados">Mostrando todos los productos</span>
+                </div>
+
+                <!-- Las tarjetas las agrega productos/productos.js -->
+                <div class="productos-grilla" id="productosGrilla"></div>
+
+                <div class="sin-productos" id="sinProductos">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h3>No encontramos productos</h3>
+                    <p>Prueba con otro nombre o categoría.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- =====================================================
-                5° SECCION CALIDAD / CARACTERÍSTICAS
-    ====================================================== -->
-    <section class="quality-section" id="calidad">
-        <div class="section-container">
-            <div class="section-heading">
-                <span class="section-label">
-                    NUESTRO COMPROMISO
-                </span>
-                <h2>¿Por qué elegirnos?</h2>
-                <p>
-                    Trabajamos cada día para ofrecerte una experiencia
-                    de compra confiable.
-                </p>
+        <!-- ===================== NOSOTROS ===================== -->
+        <section 
+            class="seccion-nosotros" id="nosotros">
+            <div class="contenedor">
+                <div class="nosotros-grilla">
+                    <div class="nosotros-imagen">
+                        <img src="imagenes/carne calidad.webp" alt="Interior de la carnicería" loading="lazy">
+                    </div>
+                    <div class="nosotros-contenido">
+                        <span class="seccion-etiqueta">SOBRE NOSOTROS</span>
+                        <h2>Calidad que puedes llevar a tu mesa</h2>
+                        <p>
+                            Trabajamos para ofrecer productos frescos y
+                            seleccionados, brindando una atención cercana
+                            y responsable a cada uno de nuestros clientes.
+                        </p>
+                        <p>
+                            Nuestra prioridad es mantener una excelente
+                            calidad, limpieza y conservación en cada producto
+                            que ofrecemos.
+                        </p>
+                        <a href="#contacto" class="boton-primario">
+                            <i class="fa-solid fa-location-dot"></i>
+                            Visítanos
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="quality-grid">
+        </section>
 
-                <!-- LIMPIEZA -->
-                <article class="quality-card">
-                    <div class="quality-icon">
-                        <i class="fa-solid fa-hand-sparkles"></i>
-                    </div>
-                    <h3>Manejo limpio</h3>
-                    <p>
-                        Cuidamos la limpieza y el manejo adecuado de
-                        nuestros productos.
-                    </p>
-                </article>
+        <!-- ===================== CALIDAD ===================== -->
+        <section 
+            class="seccion-calidad" id="calidad">
+            <div class="contenedor">
+                <div class="seccion-encabezado">
+                    <span class="seccion-etiqueta">NUESTRO COMPROMISO</span>
+                    <h2>¿Por qué elegirnos?</h2>
+                    <p>Trabajamos cada día para ofrecerte una experiencia de compra confiable.</p>
+                </div>
 
-                <!-- CALIDAD -->
-                <article class="quality-card">
-                    <div class="quality-icon">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-                    <h3>Productos de calidad</h3>
-                    <p>
-                        Seleccionamos nuestros productos buscando siempre
-                        ofrecer una excelente calidad.
-                    </p>
-                </article>
+                <div class="calidad-grilla">
+                    <article class="calidad-tarjeta">
+                        <div class="calidad-icono"><i class="fa-solid fa-hand-sparkles"></i></div>
+                        <h3>Manejo limpio</h3>
+                        <p>Cuidamos la limpieza y el manejo adecuado de nuestros productos.</p>
+                    </article>
 
-                <!-- PRECIO -->
-                <article class="quality-card">
-                    <div class="quality-icon">
-                        <i class="fa-solid fa-scale-balanced"></i>
-                    </div>
-                    <h3>Precio justo</h3>
-                    <p>
-                        Buscamos ofrecer precios adecuados y competitivos
-                        para nuestros clientes.
-                    </p>
-                </article>
+                    <article class="calidad-tarjeta">
+                        <div class="calidad-icono"><i class="fa-solid fa-award"></i></div>
+                        <h3>Productos de calidad</h3>
+                        <p>Seleccionamos nuestros productos buscando siempre ofrecer una excelente calidad.</p>
+                    </article>
 
-                <!-- FRESCURA -->
-                <article class="quality-card">
-                    <div class="quality-icon">
-                        <i class="fa-solid fa-temperature-low"></i>
-                    </div>
-                    <h3>Buena conservación</h3>
-                    <p>
-                        Cuidamos la conservación de nuestros productos
-                        para mantener su calidad.
-                    </p>
-                </article>
+                    <article class="calidad-tarjeta">
+                        <div class="calidad-icono"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h3>Precio justo</h3>
+                        <p>Buscamos ofrecer precios adecuados y competitivos para nuestros clientes.</p>
+                    </article>
 
-                <!-- ATENCIÓN -->
-                <article class="quality-card">
-                    <div class="quality-icon">
-                        <i class="fa-solid fa-user-check"></i>
-                    </div>
-                    <h3>Buena atención</h3>
-                    <p>
-                        Queremos que cada cliente reciba una atención
-                        amable y responsable.
-                    </p>
-                </article>
+                    <article class="calidad-tarjeta">
+                        <div class="calidad-icono"><i class="fa-solid fa-temperature-low"></i></div>
+                        <h3>Buena conservación</h3>
+                        <p>Cuidamos la conservación de nuestros productos para mantener su calidad.</p>
+                    </article>
 
-                <!-- CONFIANZA -->
-                <article class="quality-card">
-                    <div class="quality-icon">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <h3>Tu confianza</h3>
-                    <p>
-                        Trabajamos para construir una relación de
-                        confianza con nuestros clientes.
-                    </p>
-                </article>
+                    <article class="calidad-tarjeta">
+                        <div class="calidad-icono"><i class="fa-solid fa-user-check"></i></div>
+                        <h3>Buena atención</h3>
+                        <p>Queremos que cada cliente reciba una atención amable y responsable.</p>
+                    </article>
+
+                    <article class="calidad-tarjeta">
+                        <div class="calidad-icono"><i class="fa-solid fa-heart"></i></div>
+                        <h3>Tu confianza</h3>
+                        <p>Trabajamos para construir una relación de confianza con nuestros clientes.</p>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     </main>
 
-    <!-- =====================================================
-                CARRITO LATERAL
-    ====================================================== -->
-    <div class="cart-overlay" id="cartOverlay"></div>
-    <aside class="cart-sidebar" id="cartSidebar">
+    <!-- ===================== CARRITO LATERAL ===================== -->
+     <section>
+    <div class="carrito-fondo" id="fondoCarrito"></div>
+    <aside class="carrito-lateral" id="carritoLateral">
 
-        <!-- CABECERA CARRITO -->
-        <div class="cart-header">
+        <div class="carrito-cabecera">
             <div>
                 <span>TU COMPRA</span>
                 <h2>Mi carrito</h2>
             </div>
-            <button
-                class="close-cart"
-                id="closeCart"
-                aria-label="Cerrar carrito"
-                type="button">
+            <button class="cerrar-carrito" id="cerrarCarrito" aria-label="Cerrar carrito" type="button">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
 
-        <!-- PRODUCTOS CARRITO -->
-        <div class="cart-items" id="cartItems">
-            <div class="empty-cart" id="emptyCart">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <h3>Tu carrito está vacío</h3>
-                <p>Agrega productos para comenzar tu compra.</p>
-                <button
-                    id="continueShopping"
-                    type="button">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                    Ver productos
-                </button>
-            </div>
+        <div class="carrito-items" id="itemsCarrito">
+            <!-- JavaScript dibuja el contenido -->
         </div>
 
-        <!-- TOTAL -->
-        <div class="cart-footer">
-            <div class="cart-total">
+        <div class="carrito-pie">
+            <div class="carrito-total">
                 <span>Total</span>
-                <strong id="cartTotal">
-                    Bs. 0.00
-                </strong>
+                <strong id="totalCarrito">Bs. 0.00</strong>
             </div>
-            <button
-                class="checkout-button"
-                id="checkoutButton"
-                disabled
-                type="button">
+            <button class="boton-pedido" id="botonPedido" disabled type="button">
                 <i class="fa-solid fa-bag-shopping"></i>
                 Realizar pedido
             </button>
         </div>
     </aside>
 
-    <!-- =====================================================
-                MODAL DE FORMULARIO DE PEDIDO
-    ====================================================== -->
-    <div class="modal-overlay" id="orderModal">
-        <div class="order-modal">
-            <button
-                class="modal-close"
-                id="closeOrderModal"
-                aria-label="Cerrar formulario"
-                type="button">
+    <!-- ===================== MODAL DE PEDIDO ===================== -->
+    <div class="modal-fondo" id="modalPedido">
+        <div class="modal-pedido">
+            <button class="modal-cerrar" id="cerrarModalPedido" aria-label="Cerrar formulario" type="button">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <div class="modal-icon">
-                <i class="fa-brands fa-whatsapp"></i>
-            </div>
-            <span class="modal-label">
-                FINALIZAR PEDIDO
-            </span>
+            <div class="modal-icono"><i class="fa-brands fa-whatsapp"></i></div>
+            <span class="modal-etiqueta">FINALIZAR PEDIDO</span>
             <h2>Completa tus datos</h2>
-            <p>
-                Ingresa tus datos para preparar tu pedido y enviarlo por
-                WhatsApp.
-            </p>
+            <p>Ingresa tus datos para preparar tu pedido y enviarlo por WhatsApp.</p>
 
-            <!-- FORMULARIO -->
-            <form id="orderForm">
+            <form id="formularioPedido">
 
-                <!-- NOMBRE -->
-                <div class="form-group">
-                    <label for="customerName">
-                        Nombre completo
-                    </label>
-                    <div class="input-wrapper">
+                <div class="grupo-formulario">
+                    <label for="nombreCliente">Nombre completo</label>
+                    <div class="campo">
                         <i class="fa-solid fa-user"></i>
-                        <input
-                            type="text"
-                            id="customerName"
-                            placeholder="Escribe tu nombre"
-                            required>
+                        <input type="text" id="nombreCliente" placeholder="Escribe tu nombre" autocomplete="name" required>
                     </div>
                 </div>
 
-                <!-- CELULAR -->
-                <div class="form-group">
-                    <label for="customerPhone">
-                        Número de celular
-                    </label>
-                    <div class="input-wrapper">
+                <div class="grupo-formulario">
+                    <label for="celularCliente">Número de celular</label>
+                    <div class="campo">
                         <i class="fa-solid fa-phone"></i>
-                        <input
-                            type="tel"
-                            id="customerPhone"
-                            placeholder="Ej. 7XXXXXXX"
-                            required>
+                        <input type="tel" id="celularCliente" placeholder="Ej. 7XXXXXXX" autocomplete="tel" required>
                     </div>
                 </div>
 
-                <!-- OBSERVACIONES -->
-                <div class="form-group">
-                    <label for="customerNote">
-                        Observaciones
-                        <span>(opcional)</span>
-                    </label>
-                    <div class="input-wrapper textarea-wrapper">
+                <div class="grupo-formulario">
+                    <label for="notaCliente">Observaciones <span>(opcional)</span></label>
+                    <div class="campo campo-texto">
                         <i class="fa-solid fa-message"></i>
-                        <textarea
-                            id="customerNote"
-                            rows="3"
-                            placeholder="Alguna indicación para tu pedido..."
-                        ></textarea>
+                        <textarea id="notaCliente" rows="3" placeholder="Alguna indicación para tu pedido..."></textarea>
                     </div>
                 </div>
 
-                <!-- RESUMEN -->
-                <div class="order-summary">
-                    <div class="summary-title">
+                <div class="resumen-pedido">
+                    <div class="resumen-titulo">
                         <i class="fa-solid fa-receipt"></i>
                         Resumen de tu pedido
                     </div>
-                    <div id="orderSummaryItems">
-                        <!-- JavaScript agregará los productos -->
-                    </div>
-                    <div class="summary-total">
+                    <div id="itemsResumen"></div>
+                    <div class="resumen-total">
                         <span>Total</span>
-                        <strong id="orderSummaryTotal">
-                            Bs. 0.00
-                        </strong>
+                        <strong id="totalResumen">Bs. 0.00</strong>
                     </div>
                 </div>
 
-                <!-- BOTÓN WHATSAPP -->
-                <button
-                    type="submit"
-                    class="whatsapp-submit">
+                <button type="submit" class="enviar-whatsapp">
                     <i class="fa-brands fa-whatsapp"></i>
                     Enviar pedido por WhatsApp
                 </button>
@@ -548,151 +387,95 @@
         </div>
     </div>
 
-    <!-- =====================================================
-                MODAL DE CONFIRMACIÓN
-    ====================================================== -->
-    <div
-        class="modal-overlay confirmation-overlay"
-        id="confirmationModal">
-        <div class="confirmation-modal">
-            <div class="confirmation-icon">
-                <i class="fa-solid fa-check"></i>
-            </div>
+    <!-- ===================== MODAL DE CONFIRMACIÓN ===================== -->
+    <div class="modal-fondo confirmacion-fondo" id="modalConfirmacion">
+        <div class="modal-confirmacion">
+            <div class="confirmacion-icono"><i class="fa-solid fa-check"></i></div>
             <h2>¡Pedido enviado correctamente!</h2>
-            <p>
-                Hemos recibido tu solicitud. En unos momentos confirmaremos
-                tu pedido.
-            </p>
-            <button
-                id="closeConfirmation"
-                type="button">
-                Aceptar
-            </button>
+            <p>Hemos recibido tu solicitud. En unos momentos confirmaremos tu pedido.</p>
+            <button id="cerrarConfirmacion" type="button">Aceptar</button>
         </div>
     </div>
+    </section>
 
-    <!-- =====================================================
-                6° SECCION FOOTER
-    ====================================================== -->
-    <footer class="footer" id="contacto">
-        <div class="footer-container">
+    <!-- ===================== PIE DE PÁGINA ===================== -->
+    <footer 
+        class="pie" id="contacto">
+        <div class="pie-contenedor">
 
-            <!-- INFORMACIÓN -->
-            <div class="footer-column footer-brand">
-                <div class="footer-logo">
-                    <img
-                        src="imagenes/logo.png"
-                        alt="Logo de la carnicería">
+            <div class="pie-columna pie-marca">
+                <div class="pie-logo">
+                    <img src="imagenes/logo.png" alt="Logo de la carnicería" loading="lazy">
                 </div>
                 <h3>CARNICERÍA EL MAGO</h3>
-                <p>
-                    Calidad, frescura y confianza para llevar a tu mesa
-                    productos seleccionados.
-                </p>
+                <p>Calidad, frescura y confianza para llevar a tu mesa productos seleccionados.</p>
             </div>
 
-            <!-- DIRECCIÓN -->
-            <div class="footer-column">
+            <div class="pie-columna">
                 <h3>Visítanos</h3>
-                <div class="footer-contact">
-                    <div class="contact-item">
+                <div class="pie-contacto">
+                    <div class="contacto-item">
                         <i class="fa-solid fa-location-dot"></i>
                         <div>
-                            <strong>
-                                Dirección
-                            </strong>
-                            <span>
-                                Tu dirección aquí
-                            </span>
+                            <strong>Dirección</strong>
+                            <span>6 de agosto</span>
                         </div>
                     </div>
 
-                    <div class="contact-item">
+                    <div class="contacto-item">
                         <i class="fa-solid fa-phone"></i>
                         <div>
-                            <strong>
-                                Celular
-                            </strong>
-                            <span>
-                                67933907
-                            </span>
+                            <strong>Celular</strong>
+                            <span>67933907</span>
                         </div>
                     </div>
 
-                    <div class="contact-item">
+                    <div class="contacto-item">
                         <i class="fa-regular fa-clock"></i>
                         <div>
-                            <strong>
-                                Horario
-                            </strong>
-                            <span>
-                                Lunes a Domingo<br>
-                                08:00 – 20:00
-                            </span>
+                            <strong>Horario</strong>
+                            <span>Lunes a Domingo<br>08:00 – 20:00</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- WHATSAPP -->
-            <div class="footer-column">
+            <div class="pie-columna">
                 <h3>WhatsApp</h3>
-                <p>
-                    Reserva tus productos o comunícate directamente con
-                    nosotros.
-                </p>
-
-                <!-- RESERVAR POR WHATSAPP -->
-                <a
-                    href="#"
-                    class="whatsapp-button"
-                    id="footerWhatsapp"
-                    target="_blank"
-                    rel="noopener">
+                <p>Reserva tus productos o comunícate directamente con nosotros.</p>
+                <a href="#" class="boton-whatsapp" id="whatsappPie" target="_blank" rel="noopener">
                     <i class="fa-brands fa-whatsapp"></i>
                     Reservar por WhatsApp
-                </a>                
+                </a>
             </div>
 
-            <!-- MAPA -->
-            <div class="footer-column footer-map-column">
+            <div class="pie-columna pie-columna-mapa">
                 <h3>Encuéntranos</h3>
-              <div class="map-container">
+                <div class="mapa-contenedor">
                     <iframe
                         src="https://www.google.com/maps?q=-19.554266,-65.453719&z=18&t=k&output=embed"
-                        title="Ubicación de Carnicería Jheeny"
+                        title="Ubicación de Carnicería El Mago"
                         loading="lazy"
                         allowfullscreen
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <a
-                    href="https://www.google.com/maps/search/?api=1&query=-19.554266,-65.453719"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="map-button">
+                <a href="https://www.google.com/maps/search/?api=1&query=-19.554266,-65.453719"
+                   target="_blank" rel="noopener noreferrer" class="boton-mapa">
                     <i class="fa-solid fa-location-dot"></i>
                     Abrir en Google Maps
                 </a>
             </div>
         </div>
 
-        <!-- PARTE INFERIOR -->
-        <div class="footer-bottom">
-            <div class="footer-bottom-container">
-                <p>©<span id="currentYear"></span>
-                    Carnicería-el-mago. Todos los derechos reservados.
-                </p>
+        <div class="pie-inferior">
+            <div class="pie-inferior-contenedor">
+                <p>© <span id="anioActual"></span> Carnicería-el-mago. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-
-    <!-- =====================================================
-                JAVASCRIPT
-    ====================================================== -->
-
-    <script src="script.js"></script>
-    <script src="productos/productos.js"></script>
-
+    
+    <script src="script.js" defer></script>
+    <script src="productos/productos.js" defer></script>
 </body>
 </html>

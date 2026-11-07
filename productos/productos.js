@@ -217,7 +217,7 @@ const PRODUCTOS = [
         =============================== */
 
     { nombre: "Chorizo", 
-      categoria: "Embutido", 
+      categoria: "embutidos", 
       imagen: "imagenes/chorizo.webp",
       descripcion: "Sabor, suavidad y calidad ideal para preparar deliciosos platos en cualquier ocasión.",
       precio: 55, 
@@ -328,33 +328,38 @@ function escaparHTML(texto) {
         .replace(/"/g, "&quot;");
 }
 
-function crearTarjeta(p) {
-    const categoriaTexto = CATEGORIAS[p.categoria] || p.categoria;
-    const etiqueta = p.etiqueta ? " " + p.etiqueta : "";
-    const nombreCarrito = p.nombre + etiqueta;
-    const sep = p.unidad.toLowerCase() === "kg" ? " / " : "/";
+/* 35 -> "35"   |   2.5 -> "2.50" */
+function formatearPrecioProducto(precio) {
+    const numero = Number(precio);
+    return Number.isInteger(numero) ? String(numero) : numero.toFixed(2);
+}
+
+function crearTarjeta(producto) {
+    const categoriaTexto = CATEGORIAS[producto.categoria] || producto.categoria;
+    const etiqueta = producto.etiqueta ? " " + producto.etiqueta : "";
+    const nombreCarrito = producto.nombre + etiqueta;
+    const separador = producto.unidad.toLowerCase() === "kg" ? " / " : "/";
 
     return `
-    <article class="product-card"
-             data-category="${escaparHTML(p.categoria)}"
-             data-name="${escaparHTML(p.nombre.toLowerCase())}">
-        <div class="product-image">
-            <img class="bg-blur" src="${escaparHTML(p.imagen)}" alt="" aria-hidden="true">
-            <img class="main-img" src="${escaparHTML(p.imagen)}" alt="${escaparHTML(p.nombre)}" loading="lazy">
-            <span class="product-category">${escaparHTML(categoriaTexto)}</span>
+    <article class="tarjeta-producto"
+             data-categoria="${escaparHTML(producto.categoria)}"
+             data-nombre="${escaparHTML(producto.nombre.toLowerCase())}">
+        <div class="producto-imagen">
+            <img class="img-principal" src="${escaparHTML(producto.imagen)}" alt="${escaparHTML(producto.nombre)}" loading="lazy" decoding="async">
+            <span class="producto-categoria">${escaparHTML(categoriaTexto)}</span>
         </div>
-        <div class="product-info">
-            <h3>${escaparHTML(p.nombre)}</h3>
-            <p>${escaparHTML(p.descripcion)}</p>
-            <div class="product-bottom">
-                <div class="product-price">
-                    <strong>Bs. ${escaparHTML(p.precio)}${escaparHTML(etiqueta)}</strong>
-                    <span>${sep}${escaparHTML(p.unidad)}</span>
+        <div class="producto-info">
+            <h3>${escaparHTML(producto.nombre)}</h3>
+            <p>${escaparHTML(producto.descripcion)}</p>
+            <div class="producto-pie">
+                <div class="producto-precio">
+                    <strong>Bs. ${formatearPrecioProducto(producto.precio)}${escaparHTML(etiqueta)}</strong>
+                    <span>${separador}${escaparHTML(producto.unidad)}</span>
                 </div>
-                <button class="add-cart"
-                        data-product="${escaparHTML(nombreCarrito)}"
-                        data-price="${escaparHTML(p.precio)}"
-                        data-unit="${escaparHTML(p.unidad)}"
+                <button class="agregar-carrito"
+                        data-producto="${escaparHTML(nombreCarrito)}"
+                        data-precio="${escaparHTML(producto.precio)}"
+                        data-unidad="${escaparHTML(producto.unidad)}"
                         type="button">
                     <i class="fa-solid fa-cart-plus"></i>
                     Agregar al carrito
@@ -365,9 +370,10 @@ function crearTarjeta(p) {
 }
 
 function renderizarProductos() {
-    const grid = document.getElementById("productsGrid");
-    if (!grid) return;
-    grid.innerHTML = PRODUCTOS.map(crearTarjeta).join("");
+    const grilla = document.getElementById("productosGrilla");
+    if (!grilla) return;
+    // Una sola escritura al DOM (más rápido)
+    grilla.innerHTML = PRODUCTOS.map(crearTarjeta).join("");
     document.dispatchEvent(new CustomEvent("productosRenderizados"));
 }
 
